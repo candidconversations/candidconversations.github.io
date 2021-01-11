@@ -1,6 +1,6 @@
 import { graphql, Link } from "gatsby";
 import * as React from "react";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
 export const query = graphql`
   {
@@ -25,7 +25,7 @@ const PostItem = props => {
     <div>
       <p>{props.frontmatter.date}</p>
       <h2>
-        <Link to={props.fields.slug}>{props.frontmatter.title}</Link>
+        <Link to={`posts${props.fields.slug}`}>{props.frontmatter.title}</Link>
       </h2>
       <p>{props.frontmatter.description}</p>
     </div>
