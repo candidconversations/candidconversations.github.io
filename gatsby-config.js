@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   siteMetadata: {
     title: "Candid Conversations",
@@ -20,6 +22,15 @@ module.exports = {
         path: "./content/",
       },
       __key: "posts",
+    },
+    {
+      resolve: "gatsby-plugin-alias-imports",
+      options: {
+        alias: {
+          "@components": path.resolve(__dirname, "src/components"),
+        },
+        extensions: ["js"],
+      },
     },
     {
       resolve: "gatsby-transformer-remark",

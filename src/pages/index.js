@@ -1,6 +1,7 @@
 import { graphql, Link } from "gatsby";
 import * as React from "react";
-import { Helmet } from "react-helmet";
+
+import Layout from "@components/layout";
 
 export const query = graphql`
   {
@@ -36,19 +37,17 @@ const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.nodes;
   return (
     <>
-      <Helmet>
-        <title>Candid Converstations</title>
-      </Helmet>
-      <header>
-        <h1>Candid Conversations</h1>
-        <p>A deeper look into what life is like for fellow humans.</p>
-      </header>
-      <main>
-        {posts.map(p => (
-          <PostItem {...p} />
-        ))}
-      </main>
-      <footer>© {new Date().getFullYear()} Candid Conversations</footer>
+      <Layout>
+        <header>
+          <h1>Candid Conversations</h1>
+          <p>A deeper look into what life is like for fellow humans.</p>
+        </header>
+        <main>
+          {posts.map(p => (
+            <PostItem {...p} />
+          ))}
+        </main>
+      </Layout>
     </>
   );
 };
