@@ -13,5 +13,16 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "posts",
+        path: "./content/",
+      },
+      __key: "posts",
+    },
+    {
+      resolve: "gatsby-transformer-remark",
+    },
   ],
 };
