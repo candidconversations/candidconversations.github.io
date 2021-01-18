@@ -10,7 +10,9 @@ const Layout = ({ title, children }) => {
         </title>
       </Helmet>
       {children}
-      <footer>© {new Date().getFullYear()} Candid Conversations</footer>
+      <footer className="bg-gray-100 p-8 text-center">
+        © {new Date().getFullYear()} Candid Conversations
+      </footer>
     </>
   );
 };
