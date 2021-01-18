@@ -25,15 +25,21 @@ const Post = ({ data }) => {
   return (
     <>
       <Layout title={post.title}>
-        <nav>
-          <Link to="/">*</Link>
+        <nav className="border-black border-b border-r content-center flex h-12 items-center justify-center w-12">
+          <Link className="relative text-4xl top-2" to="/">
+            *
+          </Link>
         </nav>
         <main>
-          <header>
-            <p>{post.date}</p>
-            <h1>{post.title}</h1>
+          <header className="mb-8 p-12 text-center max-w-prose mx-auto">
+            <p className="mb-2">{post.date}</p>
+            <h1 className="font-serif leading-extra-none text-5xl tracking-tight">
+              {post.title}
+            </h1>
           </header>
-          <article>{ReactHtmlParser(post.html)}</article>
+          <article className="mx-auto px-12 max-w-prose mb-48">
+            {ReactHtmlParser(post.html)}
+          </article>
         </main>
       </Layout>
     </>
