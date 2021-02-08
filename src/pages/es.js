@@ -16,6 +16,7 @@ export const query = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          lang
         }
       }
     }
@@ -24,9 +25,9 @@ export const query = graphql`
 
 const IndexPage = ({ data }) => {
   const props = {
-    lang: "en",
+    lang: "es",
     posts: data.allMarkdownRemark.nodes.filter(
-      node => node.fields.lang === "en"
+      node => node.fields.lang === "es"
     ),
   };
   return <Index {...props} />;
