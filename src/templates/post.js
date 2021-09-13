@@ -7,7 +7,7 @@ import { translateDateToES } from "../utils";
 
 export const query = graphql`
   query PostBySlug($id: String) {
-    markdownRemark(id: {eq: $id}) {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         description

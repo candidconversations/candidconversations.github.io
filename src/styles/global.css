@@ -24,6 +24,10 @@
     @apply border-b-2;
     @apply border-gray-300;
   }
+
+  article a {
+    @apply underline;
+  }
 }
 
 html {
